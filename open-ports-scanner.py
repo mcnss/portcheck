@@ -36,7 +36,7 @@ async def main():
 				try_port,
 				i
 			)
-			for i in range(30000, 65535)
+			for i in range(32000, 65535)
 		]
 		results = await asyncio.gather(*futures)
 		print('\n\n')
