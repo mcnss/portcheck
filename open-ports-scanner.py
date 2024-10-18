@@ -22,7 +22,7 @@ def try_port(port):
 subprocess.call('clear', shell=True)
 remoteServer = input('Enter ip: ')
 remoteServerIP = socket.gethostbyname(remoteServer)
-print('-' * 60 + f'\nPlease wait, scanning remote host {remoteServerIP}\n' + '-' * 60)
+print(f'\nscanning on {remoteServerIP}\n')
 
 t1 = datetime.now()
 
@@ -36,13 +36,13 @@ async def main():
 				try_port,
 				i
 			)
-			for i in range(32000, 65535)
+			for i in range(22, 65535)
 		]
 		results = await asyncio.gather(*futures)
 		print('\n\n')
 		for response in results:
 			if response[1] == 0:
-				print(f'Port {response[0]}: \t Open')
+				print(f'port {response[0]}: \t open')
 
 
 loop = asyncio.get_event_loop()
